@@ -13,7 +13,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path='/todos' exact render={() => <TodoList title="My TODOs!" />} />
-          <Route path='/todos/:id' exact component={TodoDetail} />
+          <Route path='/todos/:id' exact render={() => <TodoDetail title="TEST TITLE" content="TEST CONTENT"/>} />
           <Route path='/new-todo' exact component={NewTodo} />
           <Redirect exact from='/' to='/todos' />
           <Route render={() => <h1>Not Found</h1>} />
