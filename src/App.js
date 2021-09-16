@@ -1,11 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import NewTodo from "./components/TodoList/NewTodo/NewTodo";
+import TodoList from "./components/TodoList/TodoList";
+import TodoDetail from "./components/TodoDetail/TodoDetail";
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <Route
+            path="/todos"
+            exact
+            render={() => <TodoList title="My TODOs!" />}
+          />
+          <Route path="todos/:id" exact component={TodoDetail} />
+          <Route path="/new-todo" exact component={NewTodo} />
+          <Redirect exact from="/" to="todos" />
+          <Route render={() => <h1>Not Found</h1>} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
