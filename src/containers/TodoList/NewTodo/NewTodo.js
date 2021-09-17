@@ -16,7 +16,7 @@ class NewTodo extends Component {
             <div className="Newtodo">
                 <h1>Add a Todo</h1>
                 <label>Title</label>
-                <input type="text" value={this.setState.title}
+                <input type="text" value={this.state.title}
                     onChange={event => this.setState({ title: event.target.value })} />
                 <label>Content</label>
                 <textarea rows="4" type="text" value={this.state.content}
