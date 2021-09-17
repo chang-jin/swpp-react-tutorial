@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import TodoList from './containers/TodoList/TodoList';
+import TodoDetail from './components/TodoDetail/TodoDetail';
+import NewTodo from './containers/TodoList/NewTodo/NewTodo';
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
 function App() {
