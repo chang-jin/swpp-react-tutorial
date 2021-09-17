@@ -1,28 +1,33 @@
 import React from 'react';
 import './TodoDetail.css';
 
-const TodoDetail = (props) => {
-  return (
-    <div className="TodoDetail">
-      <div className="row">
-        <div className="left">
-          Name:
+class TodoDetail extends React.Component {
+  render() {
+    if (this.props.match) {
+      console.log(this.props.match.params.id);
+    }
+    return (
+      < div className="TodoDetail" >
+        <div className="row">
+          <div className="left">
+            Name:
         </div>
-        <div className="right">
-          {props.title}
+          <div className="right">
+            {this.props.title}
+          </div>
         </div>
-      </div>
 
-      <div className="row">
-        <div className="left">
-          Content:
+        <div className="row">
+          <div className="left">
+            Content:
         </div>
-        <div className="right">
-          {props.content}
+          <div className="right">
+            {this.props.content}
+          </div>
         </div>
-      </div>
-    </div>
-  );
+      </div >
+    );
+  }
 };
 
 export default TodoDetail;

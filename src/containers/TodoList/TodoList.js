@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+
 import Todo from '../../components/Todo/Todo';
 import TodoDetail from '../../components/TodoDetail/TodoDetail';
 import './TodoList.css';
+
+import { NavLink } from 'react-router-dom';
 
 class TodoList extends Component {
   state = {
@@ -22,7 +25,6 @@ class TodoList extends Component {
   }
 
   render() {
-
     const todos = this.state.todos.map((td) => {
       return (
         <Todo
@@ -33,9 +35,9 @@ class TodoList extends Component {
         />);
     });
 
-    let todoDetail = null;
+    let todo = null;
     if (this.state.selectedTodo) {
-      todoDetail = <TodoDetail
+      todo = <TodoDetail
         title={this.state.selectedTodo.title}
         content={this.state.selectedTodo.content}
       />
@@ -44,7 +46,8 @@ class TodoList extends Component {
       <div className="TodoList">
         <div className="title">{this.props.title}</div>
         <div className="todos">{todos}</div>
-        {todoDetail}
+        {todo}
+        <NavLink to='/new-todo' exact>New Todo</NavLink>
       </div>
     )
   }
