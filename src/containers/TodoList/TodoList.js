@@ -28,7 +28,7 @@ class ToDoList extends Component {
       todoDetail = <TodoDetail title={this.state.selectedTodo.title} content={this.state.selectedTodo.content}/> 
     }
 
-    const todos = this.state.todos.map(td => <Todo key={td.id} title={td.title} done={td.done} clicked={() => this.clickTodoHandler(td)}></Todo>);
+    const todos = this.state.todos.map(td => <Todo key={td.id} title={td.title} done={td.done} clicked={() => this.clickTodoHandler(td)} />);
     return (
       <div className="TodoList">
         <div className="title">{this.props.title}</div>
