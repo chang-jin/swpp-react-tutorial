@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
-        <Route path="/todos" exact render={()=><TodoList title="My TODOs" />}/>
+        <Route path="/todos" exact render={()=><TodoList title="My TODOs!" />}/>
         <Route path='/todos/:id' exact component={TodoDetail}/>
         <Route path="/new-todo" exact component={NewTodo}/>
         <Redirect exact from='/' to='todos'/>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './TodoDetail.css'
+import './TodoDetail.css';
 
 const TodoDetail = (props)=> {
     return (
@@ -21,7 +21,7 @@ const TodoDetail = (props)=> {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default TodoDetail;

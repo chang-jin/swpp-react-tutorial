@@ -32,7 +32,7 @@ class TodoList extends Component {
         const todos = this.state.todos.map((td)=>{
             return (<Todo key={td.id} title={td.title} done={td.done}
                 clicked={()=>this.clickTodoHandler(td)} />);
-        })
+        });
 
         return (
             <div className='TodoList'>
@@ -41,7 +41,7 @@ class TodoList extends Component {
                 {todoDetail}
                 <NavLink to ='/new-todo' exact>New Todo</NavLink>
             </div>
-        )
+        );
     }
 }
 
