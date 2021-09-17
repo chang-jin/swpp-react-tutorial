@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Redirect } from 'react-router-dom';
+
 import './NewTodo.css';
 
 class NewTodo extends Component {
@@ -9,9 +11,21 @@ class NewTodo extends Component {
         submitted: false,
     }
     
+    postTodoHandler = () => {
+        const data = { title: this.state.title, content: this.state.content };
+        alert('Submitted\n' + data.title + '\n' + data.content);
+        this.setState({ submitted: true });
+    }
+
     render(){
+        let redirect = null;
+        if (this.state.submitted) {
+        redirect = <Redirect to='/todos' />
+        }
+
         return(
             <div className="NewTodo">
+                {redirect}
                 <h1>Add a Todo</h1>
                 <label>Title</label>
                 <input type="text" value={this.state.title}

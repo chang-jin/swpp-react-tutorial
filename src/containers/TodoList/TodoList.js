@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import Todo from '../../components/Todo/Todo';
 import './TodoList.css';
 import TodoDetail from '../../components/TodoDetail/TodoDetail';
-import NewTodo from './NewTodo/NewTodo';
+
+import { NavLink } from 'react-router-dom';
 
 class TodoList extends Component {
     state = {
@@ -46,7 +47,7 @@ class TodoList extends Component {
               <div className="title">{this.props.title}</div>
               <div className="todos">{todos}</div>
               {todoDetail}
-              <NewTodo />
+              <NavLink to='/new-todo' exact>New Todo</NavLink>
             </div>
           )
     }
